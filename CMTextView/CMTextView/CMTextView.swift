@@ -9,30 +9,31 @@
 import UIKit
 
 @IBDesignable
-class CMTextView: UITextView {
+public class CMTextView: UITextView {
     
     private var placeholderLabel: UILabel?
     
-    @IBInspectable var placeholderText: String = "" {
+    @IBInspectable public var placeholderText: String = "" {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
-    @IBInspectable var placeholderColor: UIColor = .lightGray {
+    @IBInspectable public var placeholderColor: UIColor = .lightGray {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
-    @IBInspectable var cornerRadius: Double {
+    @IBInspectable public var cornerRadius: Double {
         get {
             return Double(self.layer.cornerRadius)
         }set {
             self.layer.cornerRadius = CGFloat(newValue)
         }
     }
-    @IBInspectable var borderWidth: Double {
+   
+    @IBInspectable public var borderWidth: Double {
         get {
             return Double(self.layer.borderWidth)
         }
@@ -40,7 +41,8 @@ class CMTextView: UITextView {
             self.layer.borderWidth = CGFloat(newValue)
         }
     }
-    @IBInspectable var borderColor: UIColor? {
+   
+    @IBInspectable public var borderColor: UIColor? {
         get {
             return UIColor(cgColor: self.layer.borderColor!)
         }
@@ -48,7 +50,8 @@ class CMTextView: UITextView {
             self.layer.borderColor = newValue?.cgColor
         }
     }
-    @IBInspectable var shadowColor: UIColor? {
+   
+    @IBInspectable public var shadowColor: UIColor? {
         get {
             return UIColor(cgColor: self.layer.shadowColor!)
         }
@@ -56,7 +59,8 @@ class CMTextView: UITextView {
             self.layer.shadowColor = newValue?.cgColor
         }
     }
-    @IBInspectable var shadowOpacity: Float {
+   
+    @IBInspectable public var shadowOpacity: Float {
         get {
             return self.layer.shadowOpacity
         }
@@ -65,18 +69,17 @@ class CMTextView: UITextView {
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initialize()
     }
     
-    override init(frame: CGRect, textContainer: NSTextContainer?) {
+    override public init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
         initialize()
     }
     
-    
-    override func prepareForInterfaceBuilder() {
+    override public func prepareForInterfaceBuilder() {
         initialize()
     }
     
@@ -109,7 +112,7 @@ class CMTextView: UITextView {
         NotificationCenter.default.removeObserver(self)
     }
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         
         if placeholderText.count > 0 {
             if placeholderLabel == nil {

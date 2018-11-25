@@ -8,14 +8,12 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/Code-Mafia/CMTextView.git"
   s.license      = "MIT"
 
-  s.author             = { "Rajmani Kushwaha" => "rajmanikush@gmail.com" }
+  s.author              = { "Rajmani Kushwaha" => "rajmanikush@gmail.com" }
   #s.social_media_url   = "https://www.linkedin.com/in/rajmanikush/"
 
   s.platform     = :ios, "11.0"
+  s.source       = { :git => "https://github.com/Code-Mafia/CMTextView.git", :tag => "1.0.1" }
 
-  s.source       = { :git => "https://github.com/Code-Mafia/CMTextView.git", :tag => "1.0.0" }
-
-  s.source_files  = "CMTextView/**/*"
-#s.exclude_files = "CMTextView/CMTextView/*.plist
+  s.source_files  = "CMTextView/*"
 
 end
